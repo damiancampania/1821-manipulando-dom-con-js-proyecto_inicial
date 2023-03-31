@@ -1,4 +1,10 @@
-const btn = document.querySelector("[data-form-btn]");
+import checkComplete from "./components/checkComplete.js";
+import basura from "./components/basura.js";///importa desde la carpeta component
+
+( () => { 
+ 
+  
+  const btn = document.querySelector("[data-form-btn]");
 const input = document.querySelector("[data-form-input]");
 
 const createTask = (evento) => {
@@ -33,44 +39,13 @@ const createTask = (evento) => {
 task.appendChild(basura());
 //task.innerHTML = content;
 
-
-  
-
-
-
     }
 
     
 // arrow o funciones anonimas =>
 btn.addEventListener("click", createTask); 
-const checkComplete = () => {
-  const i = document.createElement('i');
-  i.classList.add('far', 'fa-check-square', 'icon' );
-  i.addEventListener("click", completeTask);
-  
-  return i;
-
-}
-
-const completeTask = (event) => {
-const element = event.target;
-element.classList.toggle("fas");
-element.classList.toggle ("completeIcon");
-element.classList.toggle ("far");
-
-}
-
-const basura = () => {
-  const i = document.createElement('i');
-  i.classList.add('fas' );
-  i.classList.add('fa-trash-alt');
-  i.classList.add('trashIcon');
-  i.classList.add('icon');
-  
-  return i;
-
-}
 
 
 
+}) ()
 
